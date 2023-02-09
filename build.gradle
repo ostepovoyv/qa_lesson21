@@ -70,13 +70,13 @@ tasks.withType(Test) {
     }
 }
 
-task android_test(type: Test) {
+task android(type: Test) {
     useJUnitPlatform {
         includeTags("android")
     }
 }
 
-task ios_test(type: Test) {
+task ios(type: Test) {
     useJUnitPlatform {
         includeTags("ios")
     }
