@@ -12,7 +12,7 @@ public class ProjectConfig {
     @Config.Sources({
             "system:properties",
             "classpath:${env}.properties",
-            "classpath:test.properties"
+            "classpath:secret.properties"
     })
     interface PropInterfaceTest extends PropertiesInterface {
     }
