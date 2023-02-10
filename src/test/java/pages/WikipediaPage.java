@@ -27,7 +27,7 @@ public class WikipediaPage {
     }
 
     @Step("Ищем статью: {value}")
-    public WikipediaPage SearchArticle(String value) {
+    public WikipediaPage searchArticle(String value) {
         search.click();
         searchSrc.sendKeys(value);
         return this;

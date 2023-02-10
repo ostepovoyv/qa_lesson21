@@ -1,6 +1,5 @@
 package tests;
 
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -16,7 +15,7 @@ public class AndroidSearchTests extends TestBase {
     void searchTest() {
         wikipediaPage
                 .goBack()
-                .SearchArticle("BrowserStack")
+                .searchArticle("BrowserStack")
                 .checkSearchResult();
     }
 
@@ -26,7 +25,7 @@ public class AndroidSearchTests extends TestBase {
     void checkDescriptionTest() {
         wikipediaPage
                 .goBack()
-                .SearchArticle("Microsoft")
+                .searchArticle("Microsoft")
                 .checkPageDescription("American multinational technology corporation");
     }
 
