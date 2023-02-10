@@ -8,3 +8,8 @@ gradle clean android -Denv=android
 ```shell
 gradle clean ios -Denv=ios   
 ```
+
+Для локального запуска тестов:
+```shell
+gradle clean android -Denv=local  
+```

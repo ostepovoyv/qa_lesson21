@@ -5,14 +5,12 @@ import org.aeonbits.owner.ConfigFactory;
 
 public class ProjectConfig {
 
-
     public static final PropertiesInterface PROPS = ConfigFactory.create(PropInterfaceTest.class, System.getProperties());
 
     @Config.LoadPolicy(Config.LoadType.MERGE)
     @Config.Sources({
             "system:properties",
-            "classpath:${env}.properties",
-            "classpath:secret.properties"
+            "classpath:${env}.properties"
     })
     interface PropInterfaceTest extends PropertiesInterface {
     }
@@ -45,6 +43,24 @@ public class ProjectConfig {
 
         @Key("os_version")
         String getOsVersion();
+
+        @Key("platformName")
+        String getPlatformName();
+
+        @Key("localDriverUrl")
+        String getLocalDriverUrl();
+
+        @Key("apppackage")
+        String getAppPackage();
+
+        @Key("appactivity")
+        String getAppActivity();
+
+        @Key("appPath")
+        String getAppPath();
+
+        @Key("appUrl")
+        String getAppUrl();
 
     }
 
