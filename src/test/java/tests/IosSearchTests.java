@@ -11,7 +11,6 @@ public class IosSearchTests extends TestBase {
 
     IosPage iosPage = new IosPage();
 
-    @Disabled
     @Test
     @Tag("ios")
     @DisplayName("Проверка поиска")

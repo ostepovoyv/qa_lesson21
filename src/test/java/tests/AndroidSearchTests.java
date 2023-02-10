@@ -29,5 +29,4 @@ public class AndroidSearchTests extends TestBase {
                 .checkPageDescription("American multinational technology corporation");
     }
 
-
 }
