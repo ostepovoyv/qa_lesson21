@@ -13,7 +13,7 @@ public class IosSearchTests extends TestBase {
     @Test
     @Tag("ios")
     @DisplayName("Проверка поиска")
-    void checkOutputTextTest1() {
+    void checkTextTest() {
         iosPage
                 .clickTextButton()
                 .checkOutputText("Waiting for text input.")
