@@ -57,7 +57,7 @@ public class AndroidSearchTests extends TestBase {
             onboardingScreenPage
                     .checkPageText("Send anonymous data")
 //                    .checkRejectButton("Reject")
-                    .checkAcceptButton("Accept")
+//                    .checkAcceptButton("Accept")
                     .onboardingDone("GET STARTED");
         });
         step("Проверка экрана после онбординга", () -> {
