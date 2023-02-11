@@ -6,16 +6,17 @@ import io.appium.java_client.AppiumBy;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
+import static org.openqa.selenium.By.id;
 
 public class OnboardingScreenPage {
 
     private final SelenideElement
-            primaryTextView = $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView")),
-            addLangContainer = $(AppiumBy.id("org.wikipedia.alpha:id/addLangContainer")),
-            forwardButton = $(AppiumBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")),
-            rejectButton = $(AppiumBy.id("org.wikipedia.alpha:id/rejectButton")),
-            acceptButton = $(AppiumBy.id("org.wikipedia.alpha:id/acceptButton")),
-            onboardingDoneButton = $(AppiumBy.id("org.wikipedia.alpha:id/fragment_onboarding_done_button"));
+            primaryTextView = $(id("org.wikipedia.alpha:id/primaryTextView")),
+            addLangContainer = $(id("org.wikipedia.alpha:id/addLangContainer")),
+            forwardButton = $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")),
+            rejectButton = $(id("org.wikipedia.alpha:id/rejectButton")),
+            acceptButton = $(id("org.wikipedia.alpha:id/acceptButton")),
+            onboardingDoneButton = $(id("org.wikipedia.alpha:id/fragment_onboarding_done_button"));
 
     @Step("Проверка текста на странице")
     public OnboardingScreenPage checkPageText(String value) {
