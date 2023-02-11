@@ -29,8 +29,8 @@ public class AndroidSearchTests extends TestBase {
         wikipediaPage
                 .goBack()
                 .searchArticle("Microsoft")
-                .checkPageDescription("American multinational technology corporation");
-//                .checkTextOnArticlePage("Microsoft");
+                .checkPageDescription("American multinational technology corporation")
+                .checkTextOnArticlePage("Microsoft");
     }
 
     @Test
@@ -56,8 +56,8 @@ public class AndroidSearchTests extends TestBase {
         step("Четвертая страница", () -> {
             onboardingScreenPage
                     .checkPageText("Send anonymous data")
-//                    .checkRejectButton("Reject")
-//                    .checkAcceptButton("Accept")
+                    .checkRejectButton("Reject")
+                    .checkAcceptButton("Accept")
                     .onboardingDone("GET STARTED");
         });
         step("Проверка экрана после онбординга", () -> {
