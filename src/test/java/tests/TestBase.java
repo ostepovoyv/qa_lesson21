@@ -43,6 +43,6 @@ class TestBase {
         String sessionId = sessionId().toString();
         Attach.pageSource();
         closeWebDriver();
-//        if (!System.getProperty("env").equals("local")) Attach.addVideo(sessionId);
+        if (!System.getProperty("env").equals("local")) Attach.addVideo(sessionId);
     }
 }
