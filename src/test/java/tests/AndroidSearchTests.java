@@ -8,11 +8,9 @@ import org.junit.jupiter.api.Test;
 import pages.OnboardingScreenPage;
 import pages.WikipediaPage;
 
-import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.appium.SelenideAppium.back;
 import static io.qameta.allure.Allure.step;
 
@@ -108,7 +106,7 @@ public class AndroidSearchTests extends TestBase {
 
     @Test
     @DisplayName("Check getting started (onboarding screen)")
-    void checkOonboardingScreenTest() {
+    void checkOnboardingScreenTest() {
         step("Check 'The Free Encyclopedia …in over 300 languages' text is visible", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
                     .shouldHave(text("The Free Encyclopedia …in over 300 languages"));
