@@ -1,23 +1,19 @@
 package tests;
 
-import io.appium.java_client.AppiumBy;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.OnboardingScreenPage;
 import pages.WikipediaPage;
-
-import static com.codeborne.selenide.Condition.exactText;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.appium.SelenideAppium.back;
 import static io.qameta.allure.Allure.step;
 
-@Tag("android")
+
 public class AndroidSearchTests extends TestBase {
 
     WikipediaPage wikipediaPage = new WikipediaPage();
     OnboardingScreenPage onboardingScreenPage = new OnboardingScreenPage();
+
 
     @Test
     @Tag("android")
@@ -72,6 +68,7 @@ public class AndroidSearchTests extends TestBase {
     }
 
     @Test
+    @Tag("android")
     @DisplayName("Поиск по одной букве А")
     void LetterSearch() {
         wikipediaPage
@@ -81,12 +78,15 @@ public class AndroidSearchTests extends TestBase {
     }
 
     @Test
+    @Tag("android")
     @DisplayName("Скрытие карточки на главной странице")
     void hideThisCard() {
         wikipediaPage
                 .goBack()
+                .getCurrentTitleArticle()
                 .openArticleSettings()
-                .selectHideInMenu("Hide this card");
+                .selectHideInMenu("Hide this card")
+                .checkHiddenArticle();
     }
 
 }

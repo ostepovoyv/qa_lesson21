@@ -19,11 +19,13 @@ public class WikipediaPage {
             mainToolbar = $(AppiumBy.id("org.wikipedia.alpha:id/main_toolbar")),
             cardHeaderMenu = $(AppiumBy.id("org.wikipedia.alpha:id/view_list_card_header_menu")),
             title = $(AppiumBy.id("org.wikipedia.alpha:id/title")),
+            cardHeaderTitle = $(AppiumBy.id("org.wikipedia.alpha:id/view_card_header_title")),
             headerImage = $(AppiumBy.id("org.wikipedia.alpha:id/view_page_header_image"));
 
     private final ElementsCollection
             searchResult = $$(id("org.wikipedia.alpha:id/page_list_item_title"));
 
+    String hiddenArticleTitle;
 
     @Step("Закрываем страницу настройки")
     public WikipediaPage goBack() {
@@ -74,9 +76,19 @@ public class WikipediaPage {
     @Step("Скрываем статью")
     public WikipediaPage selectHideInMenu(String value){
         title.shouldHave(exactText(value)).click();
-//        title.click();
         return this;
     }
 
+    @Step("Получаем название статью, которую будем закрывать")
+    public WikipediaPage getCurrentTitleArticle(){
+        hiddenArticleTitle = cardHeaderTitle.getText();
+        return this;
+    }
+
+    @Step("Проверяем, что выбранная статья скрыта")
+    public WikipediaPage checkHiddenArticle(){
+        cardHeaderTitle.shouldNot(text(hiddenArticleTitle));
+        return this;
+    }
 }
 
