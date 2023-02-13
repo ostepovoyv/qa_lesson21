@@ -17,10 +17,10 @@ public class ProjectConfig {
 
     public interface PropertiesInterface extends Config {
 
-        @Key("login")
+        @Key("user_id")
         String getLogin();
 
-        @Key("password")
+        @Key("user_k")
         String getPassword();
 
         @Key("project")
