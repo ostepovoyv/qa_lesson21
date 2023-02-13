@@ -17,7 +17,7 @@ public class ProjectConfig {
 
     public interface PropertiesInterface extends Config {
 
-        @Key("user_id")
+        @Key("user_n")
         String getLogin();
 
         @Key("user_k")
