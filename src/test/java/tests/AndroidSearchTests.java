@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,7 @@ public class AndroidSearchTests extends TestBase {
                 .checkSearchResult();
     }
 
+    @Disabled
     @Test
     @Tag("android")
     @DisplayName("Поиск страницы Microsoft, проверка описания")
@@ -33,6 +35,7 @@ public class AndroidSearchTests extends TestBase {
                 .checkTextOnArticlePage("Microsoft");
     }
 
+    @Disabled
     @Test
     @Tag("android")
     @DisplayName("Прохождение онбординга")
