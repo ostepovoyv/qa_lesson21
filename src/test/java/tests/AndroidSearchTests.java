@@ -26,18 +26,18 @@ public class AndroidSearchTests extends TestBase {
         wikipediaPage
                 .goBack()
                 .searchArticle("BrowserStack")
-                .checkSearchResult();
+                .checkSearchResultSize();
     }
 
     @Test
     @Tag("android")
-    @DisplayName("Поиск страницы Microsoft, проверка описания")
+    @DisplayName("Поиск страницы Microsoft, проверка на странице")
     void checkDescriptionTest() {
         wikipediaPage
                 .goBack()
                 .searchArticle("Microsoft")
-                .checkPageDescription("American multinational technology corporation")
-                .checkTextOnArticlePage("Microsoft");
+                .checkSearchResult("American multinational technology corporation")
+                .checkTextOnArticlePage();
     }
 
     @Test
@@ -63,8 +63,6 @@ public class AndroidSearchTests extends TestBase {
         step("Четвертая страница", () -> {
             onboardingScreenPage
                     .checkPageText("Send anonymous data")
-//                    .checkRejectButton("Reject")
-//                    .checkAcceptButton("Accept")
                     .onboardingDone("GET STARTED");
         });
         step("Проверка экрана после онбординга", () -> {
@@ -74,30 +72,21 @@ public class AndroidSearchTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Поиск по букве")
+    @DisplayName("Поиск по одной букве А")
     void LetterSearch() {
-        back();
-        step("Поиск по букве А", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("A");
-        });
-        step("Проверка результата", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_description")).shouldHave(text("First letter of the Latin alphabet"));
-        });
+        wikipediaPage
+                .goBack()
+                .searchArticle("A")
+                .checkSearchResult("First letter of the Latin alphabet");
     }
 
     @Test
     @DisplayName("Скрытие карточки на главной странице")
     void hideThisCard() {
-        back();
-        step("Нажимаем на настрйоки статьи", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/view_list_card_header_menu")).click();
-        });
-        step("Выбираем скрыть в меню", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/title")).shouldHave(exactText("Hide this card"));
-            $(AppiumBy.id("org.wikipedia.alpha:id/title")).click();
-        });
-
+        wikipediaPage
+                .goBack()
+                .openArticleSettings()
+                .selectHideInMenu("Hide this card");
     }
 
 }

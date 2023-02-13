@@ -13,8 +13,6 @@ public class OnboardingScreenPage {
             primaryTextView = $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView")),
             addLangContainer = $(AppiumBy.id("org.wikipedia.alpha:id/addLangContainer")),
             forwardButton = $(AppiumBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")),
-            rejectButton = $(AppiumBy.id("org.wikipedia.alpha:id/rejectButton")),
-            acceptButton = $(AppiumBy.id("org.wikipedia.alpha:id/acceptButton")),
             onboardingDoneButton = $(AppiumBy.id("org.wikipedia.alpha:id/fragment_onboarding_done_button"));
 
     @Step("Проверка текста на странице")
@@ -33,18 +31,6 @@ public class OnboardingScreenPage {
     @Step("Нажимаем на 'Сontinue'. Переход к следующей странице")
     public OnboardingScreenPage goToNextPage() {
         forwardButton.click();
-        return this;
-    }
-
-    @Step("Проверка наличия кнопки Accept")
-    public OnboardingScreenPage checkAcceptButton(String value) {
-        acceptButton.shouldHave(Condition.text(value));
-        return this;
-    }
-
-    @Step("Проверка наличия кнопки Reject")
-    public OnboardingScreenPage checkRejectButton(String value) {
-        rejectButton.shouldHave(Condition.text(value));
         return this;
     }
 
