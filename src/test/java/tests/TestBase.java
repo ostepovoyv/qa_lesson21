@@ -11,6 +11,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
 import static com.codeborne.selenide.Selenide.*;
+import static helpers.Attach.sessionId;
 
 class TestBase {
 
@@ -40,7 +41,8 @@ class TestBase {
 
     @AfterEach
     void addAttachments() {
-        String sessionId = sessionId().toString();
+        String sessionId = sessionId();
+        Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         closeWebDriver();
         if (!System.getProperty("env").equals("local")) Attach.addVideo(sessionId);

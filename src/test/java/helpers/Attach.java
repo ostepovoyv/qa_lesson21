@@ -3,6 +3,7 @@ package helpers;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.nio.charset.StandardCharsets;
 
@@ -31,4 +32,9 @@ public class Attach {
                 + getVideoUrl(sessionId)
                 + "' type='video/mp4'></video></body></html>";
     }
+
+    public static String sessionId() {
+        return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
+    }
+
 }
