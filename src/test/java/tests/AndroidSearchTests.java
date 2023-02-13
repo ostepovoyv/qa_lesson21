@@ -8,11 +8,11 @@ import org.junit.jupiter.api.Test;
 import pages.OnboardingScreenPage;
 import pages.WikipediaPage;
 
-import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
+
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+
 import static com.codeborne.selenide.appium.SelenideAppium.back;
 import static io.qameta.allure.Allure.step;
 
