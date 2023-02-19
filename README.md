@@ -54,11 +54,11 @@ gradle clean android -Denv=local
 ## <img width="4%" title="Allure Report" src="media/logo/Allure_Report.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/qa_lesson_21_agros/33/allure/#)
 
 <p align="center">
-  <img src="media/screen/jenkins_1.png" alt="allure-report_1" width="900">
+  <img src="media/screen/allure_1.png" alt="allure-report_1" width="900">
 </p>
 
 <p align="center">
-  <img src="media/screen/jenkins_2.png" alt="allure-report_2" width="900">
+  <img src="media/screen/allure_2.png" alt="allure-report_2" width="900">
 </p>
 
 ## <img width="4%" title="Allure TestOPS" src="media/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/)
