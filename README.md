@@ -45,7 +45,7 @@ gradle clean android -Denv=local
 
 ## <img width="4%" title="Jenkins" src="media/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/qa_lesson_21_agros/)
 
-Для запуска сборки необходимо перейти в раздел <code><strong>*Собрать с параметрами*</strong></code> и нажать кнопку <code><strong>*Собрать*</strong></code>.
+Сборка проекта.
 
 <p align="center">
   <img src="media/screen/main_jenkins.png" alt="Jenkins" width="800">
